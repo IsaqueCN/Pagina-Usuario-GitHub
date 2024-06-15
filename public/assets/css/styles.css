@@ -1,0 +1,73 @@
+html,
+body {
+  height: 100vh;
+  width: 100%;
+  min-width: 300px;
+}
+
+.hr {
+  height: 3px;
+  border: 0 !important;
+  opacity: 0.8;
+  background-color: black;
+}
+
+#perfilLogos {
+  height: 20%;
+}
+
+@media (min-width: 600px) {
+  #textPerfil {
+    flex: 3;
+  }
+}
+
+#imagemPerfil {
+  height: clamp(100px, 20vh, 650px);
+}
+
+#colegas img {
+  max-height: 150px;
+  width: auto;
+}
+.card-pessoa img {
+  max-width: 20px;
+}
+
+#perfilLogos {
+  max-height: clamp(10px, 4vw, 37px);
+  gap: 15px;
+}
+#cardLogos {
+  max-height: 2vw;
+  gap: 20px;
+  min-height: clamp(25px, 3vw, 35px);
+}
+
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.sugerido-content {
+  max-height: 600px;
+  max-width: 1000px;
+}
+
+.colegas-content {
+  max-width: 1280px;
+}
+
+.Logos {
+  max-width: 80px;
+}
+
+.topicos {
+  gap: 15px;
+}
+.topico-item {
+  border-radius: 30px;
+}
