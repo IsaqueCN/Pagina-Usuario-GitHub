@@ -14,7 +14,7 @@
   <header>
     <nav class="navbar navbar-expand-md">
       <div class="container-fluid mx-2 mb-4">
-        <a class="navbar-brand fs-2">Isaque</a>
+        <a class="navbar-brand fs-2" id="LoginName">Isaque</a>
 
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
@@ -41,18 +41,16 @@
         <div class="perfil-content row px-4">
           <div id="imagemPerfil"
             class="img col-lg-3 col-md-4 flex-grow-3 col-12 me-4 mb-4 mb-md-0 d-flex justify-content-center">
-            <img src="assets/img/PerfilImg.jpg" class="rounded">
+            <img id="PerfilImg" class="rounded">
           </div>
           <div id="textPerfil" class="col-md-9 col-12 d-flex flex-column">
 
-            <a href="https://github.com/IsaqueCN" class="text-decoration-none fw-bold">Isaque Caetano
-              Nascimento</a>
-            <p class="mt-2 mb-1 perfilDescription">Olá eu sou o @IsaqueCN, Sou bastante interessado em programação,
-              principalmente o backend! Estou aprendendo C#, HTML, CSS e Bootstrap. Fato Curioso: Gosto muito de
-              aprender as coisas por diversão!</p>
-            <p class="mb-2"><span class="fw-bold">Location: </span>Belo Horizonte, MG, Brazil</p>
-            <p class="m-0 mb-3"><span class="fw-bold">Site: </span><a href="https://github.com/IsaqueCN"
-                class="text-decoration-none">https://github.com/IsaqueCN</a></p>
+            <p class="fw-bold m-0"><a class="text-decoration-none fw-bold " id="ProfileName"></a> - Followers: <span
+                id="FollowersCounter"></span></p>
+            <p class="mt-2 mb-1 perfilDescription" id="ProfileDescription"></p>
+            <p class="mb-2"><span class="fw-bold">Location: </span><span id="ProfileLocation"></span></p>
+            <p class="m-0 mb-3"><span class="fw-bold">Site: </span><a class="text-decoration-none"
+                id="ProfileWebsite"></a></p>
             <div id="perfilLogos" class="d-flex col-12 ">
               <a href="https://www.facebook.com/IsaqueCaetanonascimento"><img src="assets/img/facebook.png"></a>
               <a href="https://twitter.com/Isaque232RBLX"><img src="assets/img/twitter.png"></a>
@@ -64,225 +62,171 @@
 
       <div id="repositorios" class="col-12 py-2 px-4 mt-5">
         <div class="row mb-2">
-          <h2>Repositórios (3)</h2>
+          <h2>Repositórios (<span id="ReposCount"></span>)</h2>
           <hr class="hr">
         </div>
         <div class="repositorio-content row px-4">
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div id="ReposDiv" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
 
-            <div class="col">
+            <div id="RepoTemplate" class="col d-none">
               <div class="card h-100 border-white">
                 <div class="card-body border rounded border-secondary-subtle mb-2">
                   <a href="repo.html" class="text-decoration-none">
-                    <h5 class="card-title">Primeiro-Repositório</h5>
+                    <h5 class="card-title repo_name">REPO_NAME</h5>
                   </a>
-                  <p class="card-text">Este é o meu primeiro repositório feito no GitHub! Nele estou usando as
-                    linguagens CSS, HTML e Bootstrap para fazer trabalhos e atividades da minha universidade.</p>
+                  <p class="card-text repo_desc">REPO_DESC</p>
                 </div>
-                <div id="cardLogos" class="card-img-bottom d-flex justify-content-center col-12 mt-auto">
+                <div id="cardLogos" class="card-img-bottom d-flex justify-content-center col-12 mt-auto mb-2">
                   <img src="assets/img/Estrela.png">
-                  <h2>1</h2>
+                  <h2 class="repo_stars">REPO_STARS</h2>
                   <img src="assets/img/pessoa.png">
-                  <h2>1</h2>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 border-white">
-                <div class="card-body border rounded border-secondary-subtle mb-2">
-                  <a href="repo.html" class="text-decoration-none">
-                    <h5 class="card-title">javascript-tetris</h5>
-                  </a>
-                  <p class="card-text">Um simples jogo de tetris feito javascript, funciona exatamente como o Tetris
-                    padrão. Foram usados HTML, CSS e Bootstrap para a visualização do jogo</p>
-                </div>
-                <div id="cardLogos" class="card-img-bottom d-flex justify-content-center col-12 mt-auto">
-                  <img src="assets/img/Estrela.png">
-                  <h2>61</h2>
-                  <img src="assets/img/pessoa.png">
-                  <h2>93</h2>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 border-white">
-                <div class="card-body border rounded border-secondary-subtle mb-2">
-                  <a href="repo.html" class="text-decoration-none">
-                    <h5 class="card-title">EuSouDinossauro</h5>
-                  </a>
-                  <p class="card-text">Uma inteligência artificial que consegue ensinar o dinossauro do Google a pular
-                    cacto. O dinossauro irá pular automaticamente e conseguir uma pontuação muito alta</p>
-                </div>
-                <div id="cardLogos" class="card-img-bottom d-flex justify-content-center col-12 mt-auto">
-                  <img src="assets/img/Estrela.png">
-                  <h2>28</h2>
-                  <img src="assets/img/pessoa.png">
-                  <h2>52</h2>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 border-white">
-                <div class="card-body border rounded border-secondary-subtle mb-2">
-                  <a href="repo.html" class="text-decoration-none">
-                    <h5 class="card-title">Ultimate-Python</h5>
-                  </a>
-                  <p class="card-text">Guia de estudo Python definitivo para recém-chegados e profissionais. Use este
-                    guia de estudo para você aprender desde o básico até o avançado sobre Python</p>
-                </div>
-                <div id="cardLogos" class="card-img-bottom d-flex justify-content-center col-12 mt-auto">
-                  <img src="assets/img/Estrela.png">
-                  <h2>49</h2>
-                  <img src="assets/img/pessoa.png">
-                  <h2>103</h2>
+                  <h2 class="repo_watching">REPO_WATCHING</h2>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="sugerido" class="col-12 py-2 px-4 mt-5">
-        <div class="row mb-4">
-          <h2>Conteúdo sugerido</h2>
-          <hr class="hr">
-        </div>
-        <div class="sugerido-content row mx-auto px-4">
-          <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true"
-                aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="https://www.youtube.com/watch?v=A7WvViiZQV8"><img src="assets/img/BootstrapTutorial.jpg"
-                    class="d-block w-100" alt="Bootstrap Tutorial">
-              </div></a>
-              <div class="carousel-item">
-                <a href="https://www.freecodecamp.org/news/harvard-cs50/"><img src="assets/img/Cs50.jpg"
-                    class="d-block w-100" alt="CS50 Youtube"></a>
-              </div>
-              <div class="carousel-item">
-                <a href="https://www.youtube.com/watch?v=jS4aFq5-91M"><img src="assets/img/JSCourse.png"
-                    class="d-block w-100" alt="Javascript Course"></a>
-              </div>
-              <div class="carousel-item">
-                <a href="https://www.youtube.com/watch?v=GhQdlIFylQ8"><img src="assets/img/CSharpCourse.jpg"
-                    class="d-block w-100" alt="C# Course"></a>
-              </div>
-              <div class="carousel-item">
-                <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg"><img src="assets/img/HTML Course.jpg"
-                    class="d-block w-100" alt="C# Course"> </a>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Próximo</span>
-            </button>
+    </div>
+    <div id="sugerido" class="col-12 py-2 px-4 mt-5">
+      <div class="row mb-4">
+        <h2>Conteúdo sugerido</h2>
+        <hr class="hr">
+      </div>
+      <div class="sugerido-content row mx-auto px-4">
+        <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true"
+              aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
           </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="https://www.youtube.com/watch?v=A7WvViiZQV8"><img src="assets/img/BootstrapTutorial.jpg"
+                  class="d-block w-100" alt="Bootstrap Tutorial">
+            </div></a>
+            <div class="carousel-item">
+              <a href="https://www.freecodecamp.org/news/harvard-cs50/"><img src="assets/img/Cs50.jpg"
+                  class="d-block w-100" alt="CS50 Youtube"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.youtube.com/watch?v=jS4aFq5-91M"><img src="assets/img/JSCourse.png"
+                  class="d-block w-100" alt="Javascript Course"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.youtube.com/watch?v=GhQdlIFylQ8"><img src="assets/img/CSharpCourse.jpg"
+                  class="d-block w-100" alt="C# Course"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg"><img src="assets/img/HTML Course.jpg"
+                  class="d-block w-100" alt="C# Course"> </a>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
         </div>
       </div>
+    </div>
 
-      <div id="colegas" class="col-12 py-2 px-4 mt-5">
-        <div class="row">
-          <h2>Colegas de Trabalho</h2>
-          <hr class="hr">
-        </div>
-        <div class="colegas-content mx-auto row px-4">
-          <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
+    <div id="colegas" class="col-12 py-2 px-4 mt-5">
+      <div class="row">
+        <h2>Colegas de Trabalho</h2>
+        <hr class="hr">
+      </div>
+      <div class="colegas-content mx-auto row px-4">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
 
-            <div class="col">
-              <div class="card h-100 border-white">
-                <img src="assets/img/gabrielImg.jpg"
-                  class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                  alt="Colega de Trabalho">
-                <div class="card-body d-flex justify-content-center">
-                  <a href="#" class="text-decoration-none">
-                    <h5 class="card-title">Gabriel</h5>
-                  </a>
-                </div>
+          <div class="col">
+            <div class="card h-100 border-white">
+              <img src="assets/img/gabrielImg.jpg"
+                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
+                alt="Colega de Trabalho">
+              <div class="card-body d-flex justify-content-center">
+                <a href="#" class="text-decoration-none">
+                  <h5 class="card-title">Gabriel</h5>
+                </a>
               </div>
             </div>
-
-            <div class="col">
-              <div class="card h-100 border-white">
-                <img src="assets/img/MariaImg.jpg"
-                  class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                  alt="Colega de Trabalho">
-                <div class="card-body d-flex justify-content-center">
-                  <a href="#" class="text-decoration-none">
-                    <h5 class="card-title">Maria</h5>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 border-white">
-                <img src="assets/img/GustavoImg.jpg"
-                  class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                  alt="Colega de Trabalho">
-                <div class="card-body d-flex justify-content-center">
-                  <a href="#" class="text-decoration-none">
-                    <h5 class="card-title">Gustavo</h5>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 border-white">
-                <img src="assets/img/RobsonImg.jpg"
-                  class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                  alt="Colega de Trabalho">
-                <div class="card-body d-flex justify-content-center">
-                  <a href="#" class="text-decoration-none">
-                    <h5 class="card-title">Robson</h5>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 border-white">
-                <img src="assets/img/MarcosImg.jpg"
-                  class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                  alt="Colega de Trabalho">
-                <div class="card-body d-flex justify-content-center">
-                  <a href="#" class="text-decoration-none">
-                    <h5 class="card-title">Marcos</h5>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 border-white">
-                <img src="assets/img/JulioImg.jpg"
-                  class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                  alt="Colega de Trabalho">
-                <div class="card-body d-flex justify-content-center">
-                  <a href="#" class="text-decoration-none">
-                    <h5 class="card-title">Júlio</h5>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-
           </div>
+
+          <div class="col">
+            <div class="card h-100 border-white">
+              <img src="assets/img/MariaImg.jpg"
+                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
+                alt="Colega de Trabalho">
+              <div class="card-body d-flex justify-content-center">
+                <a href="#" class="text-decoration-none">
+                  <h5 class="card-title">Maria</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-white">
+              <img src="assets/img/GustavoImg.jpg"
+                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
+                alt="Colega de Trabalho">
+              <div class="card-body d-flex justify-content-center">
+                <a href="#" class="text-decoration-none">
+                  <h5 class="card-title">Gustavo</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-white">
+              <img src="assets/img/RobsonImg.jpg"
+                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
+                alt="Colega de Trabalho">
+              <div class="card-body d-flex justify-content-center">
+                <a href="#" class="text-decoration-none">
+                  <h5 class="card-title">Robson</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-white">
+              <img src="assets/img/MarcosImg.jpg"
+                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
+                alt="Colega de Trabalho">
+              <div class="card-body d-flex justify-content-center">
+                <a href="#" class="text-decoration-none">
+                  <h5 class="card-title">Marcos</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-white">
+              <img src="assets/img/JulioImg.jpg"
+                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
+                alt="Colega de Trabalho">
+              <div class="card-body d-flex justify-content-center">
+                <a href="#" class="text-decoration-none">
+                  <h5 class="card-title">Júlio</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
+    </div>
     </div>
   </main>
 
@@ -292,7 +236,7 @@
     </div>
   </footer>
 
-  <script type="module" src="./assets/scripts/app.js"></script>
+  <script src="./assets/scripts/app.js"></script>
   <!--Bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
