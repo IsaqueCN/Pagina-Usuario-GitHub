@@ -9,9 +9,16 @@ let ReposCounter = document.getElementById("ReposCount");
 let ReposDiv = document.getElementById("ReposDiv");
 let RepoTemplate = document.getElementById("RepoTemplate");
 
+let GETHeader = {
+    method: "GET",
+    headers: {
+        Authorization: "token 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",
+    }
+}
+
 async function UpdatePage() {
-    let userData = await (await fetch("https://api.github.com/users/IsaqueCN")).json();
-    let userRepos = await (await fetch(userData.repos_url)).json();
+    let userData = await (await fetch("https://api.github.com/users/IsaqueCN", GETHeader)).json();
+    let userRepos = await (await fetch(userData.repos_url, GETHeader)).json();
     
     let Profilelink = userData.html_url;
     LoginName.textContent = userData.login;
@@ -32,7 +39,7 @@ async function UpdatePage() {
 async function UpdateRepos(userRepos) {
     let CompleteRepoInfo = []
     for (repo of userRepos) {
-        CompleteRepoInfo.push(fetch(`https://api.github.com/repositories/${repo.id}`))
+        CompleteRepoInfo.push(fetch(`https://api.github.com/repositories/${repo.id}`, GETHeader))
     }
 
     CompleteRepoInfo = await Promise.all(CompleteRepoInfo); // Necessário fazer isto para obter uma informação mais completa dos repositórios
@@ -52,7 +59,6 @@ async function UpdateRepos(userRepos) {
         repoStars.textContent = repo.stargazers_count
         repoWatching.textContent = repo.subscribers_count
 
-        console.log(container)
         ReposDiv.appendChild(container)
         container.setAttribute("class", "col")
     }
