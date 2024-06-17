@@ -52,6 +52,9 @@ img {
   width: auto;
 }
 
+#PropietaryImg {
+  max-width: 80%;
+}
 .sugerido-content {
   max-height: 600px;
   max-width: 1000px;
