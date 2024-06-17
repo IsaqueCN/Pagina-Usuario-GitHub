@@ -17,7 +17,7 @@ let TopicTemplate = document.getElementById("TopicTemplate")
 let GETHeader = {
     method: "GET",
     headers: {
-        Authorization: "token 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",
+        Authorization: "token 48197de48c435ffdfef9d54e271f2474cdf186dc",
     }
 }
 
