@@ -12,11 +12,8 @@ let RepoTemplate = document.getElementById("RepoTemplate");
 async function UpdatePage() {
     let userData = await (await fetch("https://api.github.com/users/IsaqueCN")).json();
     let userRepos = await (await fetch(userData.repos_url)).json();
-
-    console.log(userData);
-    console.log(userRepos);
+    
     let Profilelink = userData.html_url;
-
     LoginName.textContent = userData.login;
     LoginName.href = Profilelink;
     PerfilImg.src = userData.avatar_url;
@@ -33,7 +30,15 @@ async function UpdatePage() {
 }
 
 async function UpdateRepos(userRepos) {
+    let CompleteRepoInfo = []
     for (repo of userRepos) {
+        CompleteRepoInfo.push(fetch(`https://api.github.com/repositories/${repo.id}`))
+    }
+
+    CompleteRepoInfo = await Promise.all(CompleteRepoInfo); // Necessário fazer isto para obter uma informação mais completa dos repositórios
+
+    for (repo of CompleteRepoInfo) {
+        repo = await repo.json();
         let container = RepoTemplate.cloneNode(true)
         let repoName = container.querySelector('.repo_name')
         let repoDesc = container.querySelector('.repo_desc')
@@ -45,7 +50,7 @@ async function UpdateRepos(userRepos) {
         repoRedirect.href = `/repo.html?id=${repo.id}`
         repoDesc.textContent = (repo.description) ?? "Este repositório não tem descrição."
         repoStars.textContent = repo.stargazers_count
-        repoWatching.textContent = repo.watchers_count
+        repoWatching.textContent = repo.subscribers_count
 
         console.log(container)
         ReposDiv.appendChild(container)

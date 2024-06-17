@@ -29,7 +29,7 @@ async function UpdatePage(repo) {
     RepoLanguage.textContent = repo.language ?? "Nenhuma linguagem definida."
     RepoLink.textContent = repo.html_url
     RepoLink.href = repo.html_url
-    RepoWatchers.textContent = repo.watchers_count
+    RepoWatchers.textContent = repo.subscribers_count
     RepoStars.textContent = repo.stargazers_count
     RepoForks.textContent = repo.forks_count + `${(repo.forks_count == 1) ? " Fork" : " Forks"}`
 
