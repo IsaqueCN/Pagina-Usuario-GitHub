@@ -34,19 +34,21 @@ async function UpdatePage() {
 
 async function UpdateRepos(userRepos) {
     for (repo of userRepos) {
-        let container = RepoTemplate.cloneNode(true);
+        let container = RepoTemplate.cloneNode(true)
         let repoName = container.querySelector('.repo_name')
         let repoDesc = container.querySelector('.repo_desc')
         let repoStars = container.querySelector('.repo_stars')
         let repoWatching = container.querySelector('.repo_watching')
+        let repoRedirect = container.querySelector('.repo_redirect')
 
-        repoName.textContent = repo.name;
-        repoDesc.textContent = (repo.description) ?? "Este repositório não tem descrição.";
-        repoStars.textContent = repo.stargazers_count;
-        repoWatching.textContent = repo.watchers_count;
+        repoName.textContent = repo.name
+        repoRedirect.href = `/repo.html?id=${repo.id}`
+        repoDesc.textContent = (repo.description) ?? "Este repositório não tem descrição."
+        repoStars.textContent = repo.stargazers_count
+        repoWatching.textContent = repo.watchers_count
 
         console.log(container)
-        ReposDiv.appendChild(container);
+        ReposDiv.appendChild(container)
         container.setAttribute("class", "col")
     }
 }
