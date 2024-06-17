@@ -12,7 +12,7 @@ let RepoTemplate = document.getElementById("RepoTemplate");
 let GETHeader = {
     method: "GET",
     headers: {
-        Authorization: "token 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",
+        Authorization: "token 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",
     }
 }
 
