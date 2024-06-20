@@ -29,6 +29,7 @@ if (token) {
     GETHeader = {
         method: "GET",
     }
+    console.log("Aviso: Token Github não encontrado - Limitações de API do Github podem ser aplicadas.")
 }
 
 async function UpdatePage() {
