@@ -95,35 +95,15 @@
       </div>
       <div class="sugerido-content row mx-auto px-4">
         <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true"
-              aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <div id="carouselIndicatorsDiv" class="carousel-indicators">
+            <button id="carouselIndicatorTemplate" type="button" data-bs-target="#carousel" class="d-none"></button>
           </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <a href="https://www.youtube.com/watch?v=A7WvViiZQV8"><img src="assets/img/BootstrapTutorial.jpg"
-                  class="d-block w-100" alt="Bootstrap Tutorial">
+          <div id="CarouselsDiv" class="carousel-inner">
+
+            <div id="CarouselTemplate" class="d-none">
+              <a class="CarouselLink"><img class="d-block w-100 CarouselImg">
             </div></a>
-            <div class="carousel-item">
-              <a href="https://www.freecodecamp.org/news/harvard-cs50/"><img src="assets/img/Cs50.jpg"
-                  class="d-block w-100" alt="CS50 Youtube"></a>
-            </div>
-            <div class="carousel-item">
-              <a href="https://www.youtube.com/watch?v=jS4aFq5-91M"><img src="assets/img/JSCourse.png"
-                  class="d-block w-100" alt="Javascript Course"></a>
-            </div>
-            <div class="carousel-item">
-              <a href="https://www.youtube.com/watch?v=GhQdlIFylQ8"><img src="assets/img/CSharpCourse.jpg"
-                  class="d-block w-100" alt="C# Course"></a>
-            </div>
-            <div class="carousel-item">
-              <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg"><img src="assets/img/HTML Course.jpg"
-                  class="d-block w-100" alt="C# Course"> </a>
-            </div>
+
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -143,86 +123,19 @@
         <hr class="hr">
       </div>
       <div class="colegas-content mx-auto row px-4">
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4" id="ColegasDiv">
 
-          <div class="col">
+          <div class="col d-none" id="ColegaTemplate">
             <div class="card h-100 border-white">
-              <img src="assets/img/gabrielImg.jpg"
-                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
+              <img class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
                 alt="Colega de Trabalho">
               <div class="card-body d-flex justify-content-center">
-                <a href="#" class="text-decoration-none">
-                  <h5 class="card-title">Gabriel</h5>
+                <a href="#" class="text-decoration-none card-github-link">
+                  <h5 class="card-title"></h5>
                 </a>
               </div>
             </div>
           </div>
-
-          <div class="col">
-            <div class="card h-100 border-white">
-              <img src="assets/img/MariaImg.jpg"
-                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                alt="Colega de Trabalho">
-              <div class="card-body d-flex justify-content-center">
-                <a href="#" class="text-decoration-none">
-                  <h5 class="card-title">Maria</h5>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card h-100 border-white">
-              <img src="assets/img/GustavoImg.jpg"
-                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                alt="Colega de Trabalho">
-              <div class="card-body d-flex justify-content-center">
-                <a href="#" class="text-decoration-none">
-                  <h5 class="card-title">Gustavo</h5>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card h-100 border-white">
-              <img src="assets/img/RobsonImg.jpg"
-                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                alt="Colega de Trabalho">
-              <div class="card-body d-flex justify-content-center">
-                <a href="#" class="text-decoration-none">
-                  <h5 class="card-title">Robson</h5>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card h-100 border-white">
-              <img src="assets/img/MarcosImg.jpg"
-                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                alt="Colega de Trabalho">
-              <div class="card-body d-flex justify-content-center">
-                <a href="#" class="text-decoration-none">
-                  <h5 class="card-title">Marcos</h5>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card h-100 border-white">
-              <img src="assets/img/JulioImg.jpg"
-                class="border border-secondary-subtle rounded p-sm-3 p-1 card-img-top imgColega"
-                alt="Colega de Trabalho">
-              <div class="card-body d-flex justify-content-center">
-                <a href="#" class="text-decoration-none">
-                  <h5 class="card-title">Júlio</h5>
-                </a>
-              </div>
-            </div>
-          </div>
-
 
         </div>
       </div>
