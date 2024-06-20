@@ -14,12 +14,22 @@ let RepoForks = document.getElementById("RepoForks")
 let Topics = document.getElementById("Topics")
 let TopicTemplate = document.getElementById("TopicTemplate")
 
-let GETHeader = {
-    method: "GET",
-    headers: {
-        Authorization: "token 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",
+let token = null // Coloque um token do GITHUB aqui para não ter problemas com limite de pedidos API
+let GETHeader
+
+if (token) {
+    GETHeader = {
+        method: "GET",
+        headers: {
+            Authorization: token,
+        }
+    }
+} else {
+    GETHeader = {
+        method: "GET",
     }
 }
+
 
 let URLParams = new URLSearchParams(window.location.search);
 let repoId = URLParams.get("id");
@@ -32,7 +42,6 @@ fetch(`https://api.github.com/repositories/${repoId}`, GETHeader).then((data) =>
 async function UpdatePage(repo) {
     let userInfo = await ((await fetch(`https://api.github.com/users/${repo.owner.login}`)).json())
 
-    console.log(repo);
     AcessoLink.href = repo.html_url;
     ProfileName.textContent = repo.owner.login
     PropietaryName.textContent = userInfo.name

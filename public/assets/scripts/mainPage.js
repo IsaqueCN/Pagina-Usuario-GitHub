@@ -15,10 +15,19 @@ let CarouselsDiv = document.getElementById("CarouselsDiv")
 let CarouselIndicatorTemplate = document.getElementById("carouselIndicatorTemplate")
 let CarouselIndicatorsDiv = document.getElementById("carouselIndicatorsDiv")
 
-let GETHeader = {
-    method: "GET",
-    headers: {
-        Authorization: "token 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",
+let token = null // Coloque um token do GITHUB aqui para não ter problemas com limite de pedidos API
+let GETHeader
+
+if (token) {
+    GETHeader = {
+        method: "GET",
+        headers: {
+            Authorization: token,
+        }
+    }
+} else {
+    GETHeader = {
+        method: "GET",
     }
 }
 
