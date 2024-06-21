@@ -1,6 +1,9 @@
 let LoginName = document.getElementById("LoginName")
 let PerfilImg = document.getElementById("PerfilImg")
 let nameText = document.getElementById("ProfileName")
+let userFacebook = document.getElementById("userFacebook")
+let userInstagram = document.getElementById("userInstagram")
+let userTwitter = document.getElementById("userTwitter")
 let descriptionText = document.getElementById("ProfileDescription")
 let websiteText = document.getElementById("ProfileWebsite")
 let followersCounter = document.getElementById("FollowersCounter")
@@ -35,7 +38,9 @@ if (token) {
 async function UpdatePage() {
     let userData = await (await fetch("https://api.github.com/users/IsaqueCN", GETHeader)).json()
     let userRepos = await (await fetch(userData.repos_url, GETHeader)).json()
-    
+    let userSocialMedia = await (await fetch("https://api.github.com/users/IsaqueCN/social_accounts")).json()
+
+    console.log(userSocialMedia)
     let Profilelink = userData.html_url
     LoginName.textContent = userData.login
     LoginName.href = Profilelink
@@ -51,6 +56,14 @@ async function UpdatePage() {
 
     UpdateRepos(userRepos);
 
+    for (let obj of userSocialMedia) {
+        switch (obj.provider) {
+            case "facebook": userFacebook.href = obj.url; break;
+            case "instagram": userInstagram.href = obj.url; break;
+            case "twitter": userTwitter.href = obj.url; break;
+        }
+    }
+
     let conteudoSugerido = await (await fetch("destaques")).json()
 
     for (let obj of conteudoSugerido) {
@@ -63,10 +76,14 @@ async function UpdatePage() {
         let newCarousel = CarouselTemplate.cloneNode(true)
         let CarouselLink = newCarousel.querySelector(".CarouselLink")
         let CarouselImg = newCarousel.querySelector(".CarouselImg")
+        let CarouselTitle = newCarousel.querySelector('.carousel-caption-title')
+        let CarouselDesc = newCarousel.querySelector(".carousel-caption-description")
 
         CarouselLink.href = obj.urlConteudo
         CarouselImg.src = obj.urlFoto
         CarouselImg.setAttribute("alt", obj.titulo)
+        CarouselTitle.textContent = obj.titulo
+        CarouselDesc.textContent = obj.descricao
 
         CarouselsDiv.appendChild(newCarousel)
 

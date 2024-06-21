@@ -44,7 +44,6 @@ body {
   min-height: clamp(25px, 3vw, 35px);
 }
 
-
 img {
   max-height: 100%;
   max-width: 100%;
@@ -58,6 +57,10 @@ img {
 .sugerido-content {
   max-height: 600px;
   max-width: 1000px;
+}
+.carousel-caption-title, .carousel-caption-description {
+  color: #f1ff00;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .colegas-content {
