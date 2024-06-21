@@ -40,7 +40,7 @@ async function UpdatePage() {
     let userRepos = await (await fetch(userData.repos_url, GETHeader)).json()
     let userSocialMedia = await (await fetch("https://api.github.com/users/IsaqueCN/social_accounts")).json()
     let Profilelink = userData.html_url
-    
+
     LoginName.textContent = userData.login
     LoginName.href = Profilelink
     PerfilImg.src = userData.avatar_url

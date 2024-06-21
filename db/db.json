@@ -4,13 +4,13 @@
       "id": 0,
       "urlFoto": "/assets/img/gabrielImg.jpg",
       "nome": "Gabriel",
-      "urlGithub": ""
+      "urlGithub": "https://github.com/GAbrielsoares"
     },
     {
       "id": 1,
       "urlFoto": "/assets/img/MariaImg.jpg",
       "nome": "Maria",
-      "urlGithub": ""
+      "urlGithub": "https://github.com/mmariaclaray"
     },
     {
       "id": 2,
@@ -28,7 +28,7 @@
       "id": 4,
       "urlFoto": "/assets/img/MarcosImg.jpg",
       "nome": "Marcos",
-      "urlGithub": ""
+      "urlGithub": "https://github.com/marcos-vsg95"
     },
     {
       "id": 5,
